@@ -1,0 +1,1 @@
+Moje rozwi¹zania do pierwszej wersji testu po kursie
