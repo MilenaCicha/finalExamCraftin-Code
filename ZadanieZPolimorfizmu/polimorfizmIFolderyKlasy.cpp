@@ -12,14 +12,16 @@ int main(){
 //    Niech draw w tych klasach wyświetla na cout obrazek odpowiednich kształtów, tyle razy, jaka wartość została podana w argumencie.
 //    Stwórz wektor unique_ptr na Shape, wypełnij go klasami pochodnymi i wywołaj na nich funkcje draw.
 
-    std::vector<std::unique_ptr<Shape::Shape>> shapes;
+    std::vector<std::unique_ptr<DrawingShapes::Shape>> shapes;
 
-    shapes.emplace_back(std::make_unique<Circle::Circle>());
-    shapes.emplace_back(std::make_unique<Square::Square>());
-    shapes.emplace_back(std::make_unique<Rectangle::Rectangle>());
+    shapes.emplace_back(std::make_unique<DrawingShapes::Circle>());
+    shapes.emplace_back(std::make_unique<DrawingShapes::Square>());
+    shapes.emplace_back(std::make_unique<DrawingShapes::Rectangle>());
     for(auto& shape: shapes){
         shape->draw(2);
         std::cout<<"\n";
     }
+
+    return 0;
 }
 

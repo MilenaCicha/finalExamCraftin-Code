@@ -1,10 +1,10 @@
 #pragma once
-#include "../Shape.h"
+#include "Shape.h"
 #include <iostream>
 
-namespace Circle {
-    class Circle : public Shape::Shape {
-    void draw (unsigned num) override;
+namespace DrawingShapes {
+    class Circle : public DrawingShapes::Shape {
+    void const draw (unsigned num) override;
     };
 }
 

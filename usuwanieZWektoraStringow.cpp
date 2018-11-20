@@ -3,7 +3,17 @@
 #include <string>
 #include <algorithm>
 
+void printVector(const std::vector<std::string>& vector){
+    for(auto& i : vector){
+        std::cout<<i<<std::endl;
+    }
+    std::cout<<"\n";
+}
 
+void removeString(std::vector<std::string>& vector){
+    std::cout<<"Usuwanie slow na litere a/A\n";
+    vector.erase(std::remove_if(std::begin(vector),std::end(vector),[&](const auto s){return s[0] == 'a' or s[0] == 'A';}),std::end(vector));
+}
 int main(){
 //    Stwórz wektor stringów.
 //    Niech w tym wektorze znajduje się pare słów.
@@ -19,24 +29,15 @@ int main(){
 
 
     std::cout<<"Wektor: \n";
-    for(auto& i : sentences){
-        std::cout<<i<<std::endl;
-    }
-    std::cout<<"\n";
-    std::cout<<"Usuwanie slow na litere a/A\n";
-    for(auto it = sentences.begin(); it != sentences.end();){
-        if((*it)[0] == 'a' or (*it)[0] == 'A'){
-            it = sentences.erase(it);
-        }
-        else
-            ++it;
-    }
+    printVector(sentences);
+//    std::cout<<"rozmiar: "<<sentences.size()<<"\n";
+    removeString(sentences);
 
-    std::cout<<"\n";
     std::cout<<"Nowy wektor: \n";
-    for(auto& i : sentences){
-        std::cout<<i<<std::endl;
-    }
+    printVector(sentences);
+//    std::cout<<"rozmiar: "<<sentences.size()<<"\n";
 
+
+    return 0;
 }
 

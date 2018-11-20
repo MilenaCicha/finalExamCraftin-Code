@@ -6,9 +6,9 @@ namespace Sentence {
         int size;
         char *sentence = new char[size];
     public:
-        Sentence()
-                : size {25},
-                sentence{const_cast<char *>("Egzamin c++, latwizna. \0")} {}
+        Sentence(char newstr[])
+                : size {24}
+                {std::strcpy(sentence,newstr);}
         ~Sentence(){
             delete[] sentence;
         }
@@ -26,7 +26,7 @@ namespace Sentence {
         }
         delete[] sentence;
         sentence = biggerTable;
-        std::strcat(sentence, " a moze jednak... \0");
+        std::strcat(sentence, "A moze jednak... \0");
     }
 }
 
@@ -40,9 +40,11 @@ int main(){
 //    i dopisz do niej jeszcze tekst: a moze jednak... . Spraw, żeby pole klasy wskazywało na tę nową tablicę dynamiczną.
 //    Przy pomocy napisanej poprzednio funkcji wyświetl zawartość pola klasy po zmianie.
 //
-
-    Sentence::Sentence sentence1;
+    char str1[] = "Egzamin c++, latwizna. \0";
+    Sentence::Sentence sentence1{str1};
     sentence1.print();
     sentence1.newTable();
     sentence1.print();
+
+    return 0;
  }
