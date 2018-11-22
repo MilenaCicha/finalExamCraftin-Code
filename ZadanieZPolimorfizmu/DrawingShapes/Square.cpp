@@ -1,7 +1,7 @@
 
 #include "Square.h"
 
-void const DrawingShapes::Square::draw(unsigned num){
+void DrawingShapes::Square::draw(unsigned num)const{
     for(int i = 0; i < num; ++i){
         std::cout<<"* * *\n";
         std::cout<<"*   *\n";

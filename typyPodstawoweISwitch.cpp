@@ -1,5 +1,5 @@
 #include <iostream>
-
+#include <limits.h>
 enum class Operation : char {
     ADDITION = '+',
     SUBTRACTION = '-',
@@ -52,9 +52,6 @@ int main() {
                 return -1;
             }
             break;
-        default:
-            std::cout << "Nie podales prawidlowego znaku operacji\n";
-            return -2;
     }
 
     return 0;

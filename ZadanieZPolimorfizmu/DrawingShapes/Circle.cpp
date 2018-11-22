@@ -1,7 +1,7 @@
 
 #include "Circle.h"
 
-void const DrawingShapes::Circle::draw(unsigned num){
+void DrawingShapes::Circle::draw(unsigned num) const{
     for(int i = 0; i < num; ++i){
         std::cout<<"  **  \n";
         std::cout<<"*    *\n";

@@ -4,7 +4,8 @@
 
 namespace DrawingShapes {
     class Circle : public DrawingShapes::Shape {
-    void const draw (unsigned num) override;
+        public:
+            void draw (unsigned num)const override;
     };
 }
 

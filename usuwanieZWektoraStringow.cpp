@@ -12,7 +12,7 @@ void printVector(const std::vector<std::string>& vector){
 
 void removeString(std::vector<std::string>& vector){
     std::cout<<"Usuwanie slow na litere a/A\n";
-    vector.erase(std::remove_if(std::begin(vector),std::end(vector),[&](const auto s){return s[0] == 'a' or s[0] == 'A';}),std::end(vector));
+    vector.erase(std::remove_if(std::begin(vector),std::end(vector),[](const auto s){return s[0] == 'a' or s[0] == 'A';}),std::end(vector));
 }
 int main(){
 //    Stwórz wektor stringów.

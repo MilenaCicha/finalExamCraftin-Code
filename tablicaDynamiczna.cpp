@@ -4,29 +4,34 @@
 namespace Sentence {
     class Sentence {
         int size;
-        char *sentence = new char[size];
+        char *sentence;
+
     public:
-        Sentence(char newstr[])
-                : size {24}
-                {std::strcpy(sentence,newstr);}
+        explicit Sentence(const char *newstr);
         ~Sentence(){
             delete[] sentence;
         }
         void print();
-        void newTable();
+        void newTable(const char *str2);
     };
 
+    Sentence::Sentence(const char *newstr) {
+        size = std::strlen(newstr)+1;
+        sentence = new char [size];
+        std::strcpy(sentence,newstr);
+    }
     void Sentence::Sentence::print() {
         std::cout<<sentence<<std::endl;
     }
-    void Sentence::Sentence::newTable(){
-        char* biggerTable = new char[size * 2];
+    void Sentence::Sentence::newTable(const char *str2){
+        size += std::strlen(str2);
+        char* biggerTable = new char[size];
         for(int i = 0; i < size; ++i){
             biggerTable[i]=sentence[i];
         }
         delete[] sentence;
         sentence = biggerTable;
-        std::strcat(sentence, "A moze jednak... \0");
+        std::strcat(sentence, str2);
     }
 }
 
@@ -40,10 +45,11 @@ int main(){
 //    i dopisz do niej jeszcze tekst: a moze jednak... . Spraw, żeby pole klasy wskazywało na tę nową tablicę dynamiczną.
 //    Przy pomocy napisanej poprzednio funkcji wyświetl zawartość pola klasy po zmianie.
 //
-    char str1[] = "Egzamin c++, latwizna. \0";
+    const char *str1 = "Egzamin c++, latwizna. \0";
+    const char *str2 = "A moze jednak... \0";
     Sentence::Sentence sentence1{str1};
     sentence1.print();
-    sentence1.newTable();
+    sentence1.newTable(str2);
     sentence1.print();
 
     return 0;

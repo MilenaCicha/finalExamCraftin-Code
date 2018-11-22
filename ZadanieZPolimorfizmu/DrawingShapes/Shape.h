@@ -3,8 +3,8 @@
 
 namespace DrawingShapes {
     class Shape {
-    public:
-        virtual const void draw(unsigned num)=0;
+        public:
+            virtual void draw(unsigned num) const =0;
     };
 
 }

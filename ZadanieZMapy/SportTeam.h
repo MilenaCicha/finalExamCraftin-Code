@@ -17,6 +17,8 @@ public:
     bool operator <(const SportTeam& other)const{
         return country < other.country || (country == other.country && sportsDiscipline < other.sportsDiscipline);
     }
+
+    friend std::ostream& operator<<(std::ostream& os, const SportTeam& st);
 };
 
 

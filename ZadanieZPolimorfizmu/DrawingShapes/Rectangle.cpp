@@ -1,7 +1,7 @@
 
 #include "Rectangle.h"
 
-void const DrawingShapes::Rectangle::draw(unsigned num){
+void DrawingShapes::Rectangle::draw(unsigned num)const{
     for(int i = 0; i < num; ++i){
         std::cout<<"* * * *\n";
         std::cout<<"*     *\n";
