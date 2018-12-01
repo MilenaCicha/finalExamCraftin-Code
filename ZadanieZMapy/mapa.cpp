@@ -41,12 +41,7 @@ int main(){
     mapOfTeams[team5].emplace_back("Ludwik Szyszko");
 
     printMap(mapOfTeams);
-
-//    for ( auto mapIt = mapOfTeams.begin(); mapIt != mapOfTeams.end(); ++mapIt){
-//        int i = 0;
-//        std::cout<<"Country: "<<mapIt->first.country<<" Sports discipline: "<<mapIt->first.sportsDiscipline<<" Player's name: "<<mapIt->second[i]<<"\n";
-//        ++i;
-//    }
+    
 
     auto it = std::find_if(mapOfTeams.begin(),mapOfTeams.end(),
                 [](const auto& element){
